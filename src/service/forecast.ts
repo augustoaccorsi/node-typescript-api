@@ -1,21 +1,9 @@
 import { StormGlass, ForecastPoint } from '@src/clients/stormGlass'
 import { ForecastController } from '@src/controllers/forecast';
 import { InternalError } from '@src/util/errors/internal-erros';
+import { Beach } from '@src/models/beach';
 
-export enum BeachPosition {
-    N = 'N',
-    S = 'S',
-    W = 'W',
-    E = 'E'
-}
-
-export interface Beach {
-    name: string;
-    position: BeachPosition;
-    lat: number;
-    lng: number;
-    user: string
-}
+export interface BeachModel extends Omit<Beach, '_id'>, Document {}
 
 export interface TimeForecast {
     time: string,
