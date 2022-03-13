@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:functional": "jest --projects ./test --forceExit --runInBand",
     "lint": "eslint ./src ./test --ext .ts",
-    "lint:fix": "eslint ./src ./test --ext .ts --fix"
+    "lint:fix": "eslint ./src ./test --ext .ts --fix",
+    "style:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "style:fix": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
     "@typescript-eslint/parser": "^5.14.0",
     "eslint": "^8.11.0",
     "jest": "^27.5.1",
+    "prettier": "^2.5.1",
     "supertest": "^6.2.2",
     "ts-jest": "^27.1.3",
     "ts-node-dev": "^1.1.8",
